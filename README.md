@@ -1,8 +1,11 @@
 # 🎙 WhisperMoji
 
+**🇯🇵 日本語 | 🇺🇸 English | 🇰🇷 한국어 | 🇨🇳 中文**  
+**このアプリは、日本語・英語・韓国語・中国語に完全対応しています。**
+
 > **🇺🇸 English** | Speak into your mic while holding a key → Text appears at your cursor. Fully local, free, private. Just run `1_Setup.bat` — everything auto-detects your language!  
 > **🇰🇷 한국어** | 키를 누른 채 말하면 → 커서 위치에 텍스트가 입력됩니다. 완전 무료, 완전 로컬. `1_Setup.bat`을 실행하면 자동으로 한국어로 전환됩니다!  
-> **🇨🇳 中文** | 按住按键说话 → 文字自动输入到光标位置。完全免费、完全本地。运行 `1_Setup.bat` 即可自动适配中文！
+> **🇨🇳 中文** | 按住按键说话 → 文字自动输入到光标位置。完全免费、完全本地。运行 `1_Setup.bat` 即可自動适配中文！
 
 ---
 
