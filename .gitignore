@@ -1,0 +1,14 @@
+# キャッシュ
+__pycache__/
+*.pyc
+
+# ユーザー設定（各自で生成される）
+config.json
+
+# AIモデルキャッシュ（数GBあるため）
+*.bin
+*.pt
+
+# IDE
+.vscode/
+.idea/
