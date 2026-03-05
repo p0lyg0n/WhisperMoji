@@ -1,11 +1,52 @@
 # 🎙 WhisperMoji
 
-**🇯🇵 日本語 | 🇺🇸 English | 🇰🇷 한국어 | 🇨🇳 中文**  
-**このアプリは、日本語・英語・韓国語・中国語に完全対応しています。**
+**🇯🇵 日本語 | [English](#-english) | [한국어](#-한국어) | [中文](#-中文)**
 
-> **🇺🇸 English** | Speak into your mic while holding a key → Text appears at your cursor. Fully local, free, private. Just run `1_Setup.bat` — everything auto-detects your language!  
-> **🇰🇷 한국어** | 키를 누른 채 말하면 → 커서 위치에 텍스트가 입력됩니다. 완전 무료, 완전 로컬. `1_Setup.bat`을 실행하면 자동으로 한국어로 전환됩니다!  
-> **🇨🇳 中文** | 按住按键说话 → 文字自动输入到光标位置。完全免费、完全本地。运行 `1_Setup.bat` 即可自動适配中文！
+このアプリは、OSの言語を自動で判別し、**日本語・英語・韓国語・中国語**に完全対応します。
+
+---
+
+## 🇺🇸 English
+
+### The Most Private Way to Dictate
+Speak into your mic while holding a key → Text appears instantly at your cursor.  
+Works in any app: Discord, Notion, Antigravity, or your browser.
+
+- 🔒 **100% Local & Private**: Your voice never leaves your PC. No cloud, no tracking.
+- 🆓 **Completely Free**: Powered by OpenAI Whisper. No API keys or subscriptions required.
+- ⚡ **Zero Config**: Just run `1_Setup.bat`. It automatically handles Python and AI model setup.
+
+[**Get Started (Instructions)**](#-インストール3分で完了)
+
+---
+
+## 🇰🇷 한국어
+
+### 가장 안전하고 빠른 음성 입력
+키를 누른 채 말하면 → 커서 위치에 바로 텍스트가 입력됩니다.  
+Antigravity, 카카오톡, 메모장 등 모든 앱에서 바로 사용 가능합니다.
+
+- 🔒 **100% 로컬**: 당신의 목소리는 PC 밖으로 나가지 않습니다. 완벽한 프라이버시 보호.
+- 🆓 **완전 무료**: OpenAI Whisper 탑재. API 키나 결제가 필요 없습니다.
+- ⚡ **원클릭 설정**: `1_Setup.bat`만 실행하세요. Python 설치부터 AI 모델 준비까지 자동으로 완료됩니다.
+
+[**시작하기 (설치 방법)**](#-インストール3分で完了)
+
+---
+
+## 🇨🇳 中文
+
+### 最私密的本地语音输入工具
+按住按键说话 → 文字即刻出现在光标位置。  
+适用于所有应用程序：Antigravity、微信、记事本或浏览器。
+
+- 🔒 **100% 本地化**: 语音数据完全在您的 PC 上处理，絕不上传云端。
+- 🆓 **完全免费**: 内置 OpenAI Whisper 模型，无需 API Key，无需订阅。
+- ⚡ **极速安装**: 只需运行 `1_Setup.bat`。自动处理环境配置和 AI 模型下载。
+
+[**开始使用 (安装步骤)**](#-インストール3分で完了)
+
+---
 
 ---
 
