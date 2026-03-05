@@ -49,15 +49,15 @@
 
 - Windows 10 / 11
 - マイク（内蔵でもヘッドセットでもOK）
-- [Python 3.11](https://www.python.org/downloads/)（インストール時に **「Add Python to PATH」に必ずチェック ☑**）
+- インターネット接続（初回のセットアップ時のみ）
 
 ### 手順
 
 ```
 ① このページの緑の「Code」→「Download ZIP」をクリック
 ② ZIPを解凍して、好きな場所に置く
-③ フォルダ内の「1_Setup.bat」をダブルクリック
-④ 自動でセットアップ完了 → アプリが起動！
+③ フォルダ内の「1_Setup.bat」をダブルクリック（自動でPythonなどの準備が始まります）
+④ 完了したら、アプリが起動！
 ```
 
 **次回からは `2_Start.bat` をダブルクリックするだけ 🎉**
@@ -186,12 +186,6 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### ロードマップ
-
-- [ ] NVIDIA GPU（CUDA）対応による高速化
-- [ ] システムトレイ常駐モード
-- [ ] Windows 起動時の自動実行
-- [ ] .exe パッケージング（PyInstaller）
 
 ---
 

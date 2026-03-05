@@ -3,10 +3,24 @@ chcp 65001 >nul
 
 cd /d "%~dp0"
 
-:: ---- Python確認 ----
+:: ---- Python確認 & 自動インストール ----
 python --version >nul 2>&1
 if %errorLevel% neq 0 (
-    echo [Error] Python not found. Please install Python 3.11: https://www.python.org/downloads/
+    echo [Info] Python not found. Starting automatic installation...
+    echo [Info] Pythonが見つかりません。自動インストールを開始します...
+    
+    :: wingetでPython 3.11をインストール
+    winget install --id Python.Python.3.11 --exact --no-upgrade --source winget --accept-package-agreements --accept-source-agreements
+    
+    if %errorLevel% neq 0 (
+        echo [Error] Automatic installation failed. Please install Python 3.11 manually: https://www.python.org/downloads/
+        echo [Error] 自動インストールに失敗しました。手動でインストールしてください。
+        pause
+        exit /b
+    )
+    
+    echo [Success] Python installed. Please RE-RUN this 1_Setup.bat.
+    echo [成功] Pythonをインストールしました。もう一度はこの 1_Setup.bat を実行してください。
     pause
     exit /b
 )
