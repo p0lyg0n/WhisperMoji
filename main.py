@@ -46,7 +46,33 @@ from engine.whisper_engine import WhisperEngine
 
 POLL_INTERVAL = 0.05
 
-
+def is_hotkey_pressed(hotkey_name: str) -> bool:
+    """キー判定のハイブリッドラッパー（左右CTRLの誤爆防止・同時押し対応）"""
+    vk_map = {
+        "right ctrl": 0xA3,  # VK_RCONTROL
+        "left ctrl": 0xA2,   # VK_LCONTROL
+        "shift": 0x10,       # VK_SHIFT
+        "alt": 0x12,         # VK_MENU
+        "space": 0x20,       # VK_SPACE
+        "tab": 0x09          # VK_TAB
+    }
+    
+    # '+' で複数キーが指定された場合（例: "left ctrl + space"）
+    keys = [k.strip() for k in hotkey_name.split('+')]
+    
+    # 指定されたすべてのキーが同時に押されているか判定
+    for k in keys:
+        if k in vk_map:
+            if (ctypes.windll.user32.GetAsyncKeyState(vk_map[k]) & 0x8000) == 0:
+                return False
+        else:
+            try:
+                if not keyboard.is_pressed(k):
+                    return False
+            except Exception:
+                return False
+                
+    return True
 
 # ===========================================================================
 #  App — メインウィンドウ（コンパクト）
@@ -348,7 +374,8 @@ class App(ctk.CTk):
         )
         self.lbl_status.configure(text=L.get("status_stopped", "Stopped"), text_color="gray")
         try:
-            keyboard.release(self.cb_hotkey.get())
+            for k in self.cb_hotkey.get().split('+'):
+                keyboard.release(k.strip())
         except Exception:
             pass
 
@@ -420,7 +447,7 @@ class App(ctk.CTk):
         with sd.InputStream(samplerate=SAMPLE_RATE, channels=1, device=device_id, callback=on_audio):
             while self.is_running:
                 hotkey = self.cb_hotkey.get()
-                if keyboard.is_pressed(hotkey):
+                if is_hotkey_pressed(hotkey):
                     if not self.is_listening:
                         self.is_listening = True
                         self.audio_buffer = []
@@ -433,7 +460,8 @@ class App(ctk.CTk):
                         self.cursor.set_processing()
                         self._set_status(L.get("status_converting", "Converting..."), COLOR_INFO)
                         try:
-                            keyboard.release(hotkey)
+                            for k in hotkey.split('+'):
+                                keyboard.release(k.strip())
                         except Exception:
                             pass
                         threading.Thread(target=self._process_audio, daemon=True).start()
