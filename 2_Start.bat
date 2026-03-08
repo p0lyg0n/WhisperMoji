@@ -3,7 +3,7 @@
 schtasks /run /tn "WhisperMoji" >nul 2>&1
 if %errorLevel% neq 0 (
     echo タスクが未登録です。管理者権限で直接起動します...
-    net session >nul 2>&1
+    reg query "HKU\S-1-5-19" >nul 2>&1
     if %errorLevel% neq 0 (
         powershell -Command "Start-Process '%~f0' -Verb RunAs"
         exit /b

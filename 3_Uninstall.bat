@@ -20,7 +20,7 @@ echo =========================================================
 echo.
 
 :: ---- 管理者権限チェック ----
-net session >nul 2>&1
+reg query "HKU\S-1-5-19" >nul 2>&1
 if %errorLevel% neq 0 (
     echo %L_ADMIN%
     powershell -Command "Start-Process '%~f0' -Verb RunAs"

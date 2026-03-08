@@ -34,7 +34,7 @@ echo =========================================================
 echo.
 
 :: ---- 管理者権限チェック ----
-net session >nul 2>&1
+reg query "HKU\S-1-5-19" >nul 2>&1
 if %errorLevel% neq 0 (
     echo ※ Administrator privileges required. Elevating...
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
@@ -54,7 +54,8 @@ if %errorLevel% equ 0 (
     echo   %L_PY_OK% %L_PKG_OK%
 ) else (
     echo   %L_PKG_DO%
-    pip install -q -r requirements.txt
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
     if %errorLevel% neq 0 (
         echo [Error] pip install failed.
         pause
